@@ -9,6 +9,9 @@
     "postinstall": "prisma generate",
     "lint": "eslint"
   },
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
+  },
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "next": "16.4.5",

@@ -1,9 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { formatCategory, formatPrice } from '@/lib/format';
 
 export default function ProductCard({ product }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+    <Link
+      href={`/products/${product.slug}`}
+      className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:shadow-md"
+    >
       <Image
         src={product.imageUrl}
         alt={product.name}
@@ -20,6 +24,6 @@ export default function ProductCard({ product }) {
           {formatPrice(product.priceCents)}
         </p>
       </div>
-    </article>
+    </Link>
   );
 }

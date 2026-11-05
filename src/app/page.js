@@ -13,10 +13,10 @@ const sortOptions = {
 };
 
 export default async function Home({ searchParams }) {
-  const { q = '', category = '', sort = 'newest' } = await searchParams;
+  const { search = '', category = '', sort = 'newest' } = await searchParams;
 
   const where = {};
-  if (q) where.name = { contains: q, mode: 'insensitive' };
+  if (search) where.name = { contains: search, mode: 'insensitive' };
   if (category) where.category = category;
 
   const products = await prisma.product.findMany({
@@ -37,8 +37,8 @@ export default async function Home({ searchParams }) {
       <form className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_auto]">
         <input
           type="search"
-          name="q"
-          defaultValue={q}
+          name="search"
+          defaultValue={search}
           placeholder="Search products"
           className={fieldClass}
         />

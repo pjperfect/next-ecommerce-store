@@ -32,7 +32,7 @@ export default async function Home({ searchParams }) {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <h1 className="text-3xl font-semibold">Store</h1>
+      <h1 className="text-3xl font-semibold">All products</h1>
 
       <form className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_auto]">
         <input

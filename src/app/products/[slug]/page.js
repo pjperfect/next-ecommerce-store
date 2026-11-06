@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { formatCategory, formatPrice } from '@/lib/format';
+import AddToCartButton from '@/components/AddToCartButton';
 
 export default async function ProductPage({ params }) {
   const { slug } = await params;
@@ -47,6 +48,9 @@ export default async function ProductPage({ params }) {
             {formatPrice(product.priceCents)}
           </p>
           <p className="mt-2 text-sm text-slate-500">{stockMessage}</p>
+          <div className="mt-6">
+            <AddToCartButton product={product} />
+          </div>
           <p className="mt-6 text-slate-700">{product.description}</p>
         </div>
       </div>

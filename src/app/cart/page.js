@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/lib/format';
+import CheckoutButton from '@/components/CheckoutButton';
 
 const quantityButtonClass =
   'h-8 w-8 rounded-lg border border-slate-300 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40';
@@ -106,6 +107,9 @@ export default function CartPage() {
         <span className="text-2xl font-semibold">
           {formatPrice(totalCents)}
         </span>
+      </div>
+      <div className="mt-6">
+        <CheckoutButton />
       </div>
     </main>
   );

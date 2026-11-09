@@ -1,6 +1,12 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 const CartContext = createContext(null);
 
@@ -73,7 +79,9 @@ export function CartProvider({ children }) {
   }
 
   function clearCart() {
-    setItems([]);
+    const clearCart = useCallback(() => {
+      setItems([]);
+    }, []);
   }
 
   const itemCount = items.reduce((total, item) => total + item.quantity, 0);

@@ -12,12 +12,20 @@ export default function Header() {
         <Link href="/" className="text-xl font-semibold">
           Next Store
         </Link>
-        <Link
-          href="/cart"
-          className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-100"
-        >
-          Cart{itemCount > 0 ? ` (${itemCount})` : ''}
-        </Link>
+        <nav className="flex items-center gap-3">
+          <Link
+            href="/orders"
+            className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-100"
+          >
+            Orders
+          </Link>
+          <Link
+            href="/cart"
+            className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-100"
+          >
+            Cart{itemCount > 0 ? ` (${itemCount})` : ''}
+          </Link>
+        </nav>
       </div>
     </header>
   );

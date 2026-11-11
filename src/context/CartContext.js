@@ -78,11 +78,9 @@ export function CartProvider({ children }) {
     setItems((currentItems) => currentItems.filter((item) => item.id !== id));
   }
 
-  function clearCart() {
-    const clearCart = useCallback(() => {
-      setItems([]);
-    }, []);
-  }
+  const clearCart = useCallback(() => {
+    setItems([]);
+  }, []);
 
   const itemCount = items.reduce((total, item) => total + item.quantity, 0);
   const totalCents = items.reduce(
